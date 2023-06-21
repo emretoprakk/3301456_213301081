@@ -1,10 +1,11 @@
-
 import 'package:coffee_shop/pages/coffee_info.dart';
+import 'package:coffee_shop/pages/customer_page.dart';
+import 'package:coffee_shop/pages/graphic_page.dart';
+import 'package:coffee_shop/pages/path_page.dart';
+import 'package:coffee_shop/pages/personel_page.dart';
 import 'package:coffee_shop/pages/price_info.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-
 import '../models/coffee_shop.dart';
 
 class InfoPage extends StatelessWidget {
@@ -22,7 +23,7 @@ class InfoPage extends StatelessWidget {
               "Bilgi Sayfası",
               style: TextStyle(fontSize: 20,color: Colors.white),
             ),
-            const SizedBox(height: 25), // kutulara uzaklıgı
+            const SizedBox(height: 15), // kutulara uzaklıgı
             Expanded(
               child: ListView.builder(
                 itemCount: value.coffeeShop.length,
@@ -52,7 +53,7 @@ class InfoPage extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             GestureDetector(
               onTap: () => Navigator.push(
                 context,
@@ -70,6 +71,101 @@ class InfoPage extends StatelessWidget {
                 child: const Center(
                   child: Text(
                     "Kahve Fiyatları",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GraphicPage(),
+                ),
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(25),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.brown,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Harcama Grafikleri",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CustomerPage(),
+                ),
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(25),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.brown,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Musteri Gorusleri",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PersonelPage(),
+                ),
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(25),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.brown,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Personel Listesi",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PathPage(),
+                ),
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(25),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.brown,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Path Sayfasi",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

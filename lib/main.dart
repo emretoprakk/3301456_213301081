@@ -1,10 +1,25 @@
-import 'package:coffee_shop/pages/login_page.dart';
+import 'package:coffee_shop/data/expense_data.dart';
+import 'package:coffee_shop/pages/auth_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
+import 'firebase_options.dart';
 import 'models/coffee_shop.dart';
-import 'pages/intro_page.dart';
 
-void main() {
+
+void main() async {
+
+  //initialize hive
+  await Hive.initFlutter();
+
+  //open a hive box
+  await Hive.openBox("expense_database");
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -12,12 +27,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => CoffeeShop(),
-      builder: (context, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: LoginPage(),
-      ),
+    return MultiProvider (
+      providers: [
+        ChangeNotifierProvider(create: (context) => CoffeeShop(),
+        ),
+      ChangeNotifierProvider(create: (context) => ExpenseData(),
+        builder: (context,child) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: AuthPage(),
+        ),
+      )
+    ],
     );
   }
 }

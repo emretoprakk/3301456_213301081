@@ -21,14 +21,6 @@ class _CartPageState extends State<CartPage> {
     Provider.of<CoffeeShop>(context, listen: false).removeItemFromCart(coffee);
   }
 
-  // pay button tapped
-  void payNow() {
-    /*
-
-    fill out your payment service here
-
-     */
-  }
   @override
   Widget build(BuildContext context) {
     return Consumer<CoffeeShop>(builder: (context, value, child) => SafeArea(
@@ -49,7 +41,7 @@ class _CartPageState extends State<CartPage> {
               child: ListView.builder(
                 itemCount: value.userCart.length,
                 itemBuilder: (context, index) {
-                  // get individual cart items
+
                   Coffee eachCoffee = value.userCart[index];
 
                   // return coffee tile

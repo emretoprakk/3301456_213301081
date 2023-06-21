@@ -3,47 +3,46 @@ import 'coffee.dart';
 
 class CoffeeShop extends ChangeNotifier {
 
-  //coffee for sale list
   final List<Coffee> _shop = [
     Coffee(
       name: "White Mocha",
-      //price: "8",
+      price: "8.50\$",
       imagePath: "lib/images/whitemocha.png",
     ),
     //iced coffee
 
     Coffee(
       name: "Iced Coffee",
-      //price: "10",
+      price: "10.50\$",
       imagePath: "lib/images/iced_coffee.png",
     ),
     //latte
     Coffee(
       name: "Latte",
-      //price: "6",
+      price: "6.15\$",
       imagePath: "lib/images/latte.png",
     ),
 
     //espresso
     Coffee(
       name: "Espresso",
-      // price: "6",
+      price: "6.15\$",
       imagePath: "lib/images/espresso.png",
     ),
     //black coffee
     Coffee(
       name: "Long Black",
-      //price: "4",
+      price: "4.85\$",
       imagePath: "lib/images/black.png",
     ),
     Coffee(
       name: "Mocha",
-      // price: "7",
+      price: "7.35\$",
       imagePath: "lib/images/mocha.png",
     ),
     Coffee(
       name: "Cappuccino",
-      //price: "6",
+      price: "6.90\$",
       imagePath: "lib/images/cappuccino.png",
     ),
   ];

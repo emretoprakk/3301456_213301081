@@ -51,11 +51,10 @@ class _ShopPageState extends State<ShopPage> {
                 itemBuilder: (context, index) {
                   //get individual coffee
                   Coffee eachCoffee = value.coffeeShop[index];
-
                   //return the tile for this coffee
                   return CoffeeTile(
                     coffee: eachCoffee,
-                    icon: Icon(Icons.add),
+                     icon: Icon(Icons.add),
                     onPressed: () => addToCart(eachCoffee), //karta ekleme
                   );
                 },
