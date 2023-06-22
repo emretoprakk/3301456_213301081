@@ -83,8 +83,8 @@ class _RegisterPageState extends State<RegisterPage> {
     await FirebaseFirestore.instance.collection("users").add({
       "first name": firstName,
       "last name": lastName ,
-      "age": email,
-      "email": age,
+      "age": age,
+      "email": email,
     });
   }
   // error message to user
